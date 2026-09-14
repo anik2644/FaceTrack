@@ -1,0 +1,10 @@
+.venv/
+app_env/
+__pycache__/
+*.pyc
+.env
+storage/faces/*
+storage/snapshots/*
+!storage/faces/.gitkeep
+!storage/snapshots/.gitkeep
+*.log

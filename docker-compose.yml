@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    container_name: facetrack-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - BACKEND_CORS_ORIGINS=http://localhost:3000
+      - DATABASE_URL=sqlite:////data/attendance.db
+    volumes:
+      - facetrack-db:/data
+      - ./backend/storage:/app/storage
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: facetrack-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  facetrack-db:

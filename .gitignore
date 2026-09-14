@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+backend/.venv/
+backend/app_env/
+backend/.env
+backend/storage/faces/*
+backend/storage/snapshots/*
+!backend/storage/faces/.gitkeep
+!backend/storage/snapshots/.gitkeep
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+
+# Database (runtime)
+database/attendance.db
+
+# Misc
+.DS_Store
+*.log
+.idea/
+.vscode/
